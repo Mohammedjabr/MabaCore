@@ -1,0 +1,146 @@
+﻿@model MabaCore.Data.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@*<h1>Create</h1>
+
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTitle" class="control-label"></label>
+                    <input asp-for="SubTitle" class="form-control" />
+                    <span asp-validation-for="SubTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageURL" class="control-label"></label>
+                    <input asp-for="ImageURL" class="form-control" />
+                    <span asp-validation-for="ImageURL" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
+<br />
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Add Product</h4>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-4 col-form-label">Name</label>
+                        <div class="col-8">
+                            <input asp-for="Name" placeholder="Name" class="form-control here" />
+                            <div class="valid-feedback">Looks good!</div>
+
+                            <div class="invalid-feedback">Please name is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Title" class="col-4 col-form-label">Title</label>
+                        <div class="col-8">
+                            <input asp-for="Title" placeholder="title" class="form-control here" />
+                            <div class="valid-feedback">Looks good!</div>
+
+                            <div class="invalid-feedback">
+                                Please title is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="SubTitle" class="col-4 col-form-label">SubTitle</label>
+                        <div class="col-8">
+                            <input asp-for="SubTitle" placeholder="subTitle" class="form-control here" />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">
+                                Please SubTitle is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Price" class="col-4 col-form-label">Price</label>
+                        <div class="col-8">
+                            <input asp-for="Price" placeholder="price" class="form-control here" />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">
+                                Please Price is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="Description" class="col-4 col-form-label">Description</label>
+                        <div class="col-8">
+                            <textarea asp-for="Description" placeholder="description"class="form-control here"></textarea>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">
+                                Please Price is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="ImageURL" class="col-4 col-form-label">Image Online URL</label>
+                        <div class="col-8">
+                            <input asp-for="ImageURL" placeholder="Image Online URL"
+                                   class="form-control here" type="text" />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">
+                                Please Image is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-4 col-8">
+                            <button name="submit" type="submit" class="btn btn-primary">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

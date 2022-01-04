@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MabaCore.Web", "MabaCore\MabaCore.Web.csproj", "{7386B9BE-AA0C-460D-9DBD-6EFB2E1491B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MabaCore.Web", "MabaCore\MabaCore.Web.csproj", "{7386B9BE-AA0C-460D-9DBD-6EFB2E1491B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MabaCore.Data", "MabaCore.Data\MabaCore.Data.csproj", "{9AAD4DF4-B14E-449E-B1C0-E2B7CA555B24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MabaCore.Data", "MabaCore.Data\MabaCore.Data.csproj", "{9AAD4DF4-B14E-449E-B1C0-E2B7CA555B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MabaCore.Core", "MabaCore.Core\MabaCore.Core.csproj", "{66680D29-04AE-4EDE-9F83-4F9A87D4845E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MabaCore.Core", "MabaCore.Core\MabaCore.Core.csproj", "{66680D29-04AE-4EDE-9F83-4F9A87D4845E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MabaCore.Repository", "MabaCore.Repository\MabaCore.Repository.csproj", "{6A959E98-7E03-4F39-8FCD-F4843449B426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MabaCore.Repository", "MabaCore.Repository\MabaCore.Repository.csproj", "{6A959E98-7E03-4F39-8FCD-F4843449B426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MabaCore.Test", "MabaCore.Test\MabaCore.Test.csproj", "{02F68D3B-1982-4632-9E9F-6352705576D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6A959E98-7E03-4F39-8FCD-F4843449B426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A959E98-7E03-4F39-8FCD-F4843449B426}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A959E98-7E03-4F39-8FCD-F4843449B426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F68D3B-1982-4632-9E9F-6352705576D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F68D3B-1982-4632-9E9F-6352705576D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F68D3B-1982-4632-9E9F-6352705576D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F68D3B-1982-4632-9E9F-6352705576D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -35,6 +35,15 @@ namespace MabaCore
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.Configure<IdentityOptions>(p =>
+            {
+                p.Password.RequireDigit = false;
+                p.Password.RequireNonAlphanumeric = false;
+                p.Password.RequiredLength = 6;
+                p.Password.RequiredUniqueChars = 1;
+                p.Password.RequireUppercase = false;
+                p.Password.RequireLowercase = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,10 +71,15 @@ namespace MabaCore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                name: "MyArea",
+                pattern: "{area:exists}/{controller=Products}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Products}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
         }
     }
 }
