@@ -61,7 +61,7 @@
         <h6 class="card-subtitle text-muted">@Model.SubTitle</h6>
     </div>
     <img style="display: block;"
-         src="@Model.ImageURL"
+         src="data:image/*;base64,@(Convert.ToBase64String(Model.ImageURL))"
          width="200" height="200" alt="Card image" />
     <div class="card-body">
         <p class="card-text">@Model.Description</p>

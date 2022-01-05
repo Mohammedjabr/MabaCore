@@ -4,6 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20220101183433_V1.cs" />
+    <Compile Remove="Migrations\20220101183433_V1.Designer.cs" />
+    <Compile Remove="Migrations\20220103195918_V2.cs" />
+    <Compile Remove="Migrations\20220103195918_V2.Designer.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.13" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />

@@ -40,7 +40,6 @@ namespace MabaCore.Data.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Discriminator = table.Column<string>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true)
@@ -61,7 +60,7 @@ namespace MabaCore.Data.Migrations
                     SubTitle = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
                     Description = table.Column<string>(nullable: true),
-                    ImageURL = table.Column<string>(nullable: true)
+                    ImageURL = table.Column<byte[]>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -180,6 +179,7 @@ namespace MabaCore.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Count = table.Column<int>(nullable: false),
                     ProductId = table.Column<int>(nullable: false),
                     UserId = table.Column<string>(nullable: true)
                 },

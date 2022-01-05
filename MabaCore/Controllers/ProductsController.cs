@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MabaCore.Data;
 using MabaCore.Data.Models;
+using System.IO;
 
 namespace MabaCore.Web.Controllers
 {
@@ -54,10 +55,15 @@ namespace MabaCore.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Title,SubTitle,Price,Description,ImageURL")] Product product)
+        public async Task<IActionResult> Create(Product product)
         {
             if (ModelState.IsValid)
             {
+                var files = Request.Form.Files;
+                var poster = files.FirstOrDefault();
+                using var dataStream = new MemoryStream();
+                await poster.CopyToAsync(dataStream);
+                product.ImageURL = dataStream.ToArray();
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
